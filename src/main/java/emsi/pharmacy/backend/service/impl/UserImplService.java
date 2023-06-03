@@ -1,0 +1,47 @@
+package emsi.pharmacy.backend.service.impl;
+
+import emsi.pharmacy.backend.entity.User;
+import emsi.pharmacy.backend.repository.UserRepository;
+import emsi.pharmacy.backend.service.fasade.UserService;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserImplService implements UserService {
+    @Autowired
+    UserRepository userRepository;
+
+    @Override
+    public ResponseEntity<User> signIn(User user) {
+        return null;
+    }
+
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public String generatePassword() {
+        return RandomStringUtils.randomAlphanumeric(10);
+    }
+
+    @Override
+    public void deleteUserById(Long id) {
+
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return null;
+    }
+}
